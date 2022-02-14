@@ -1,0 +1,37 @@
+Suppose we have a manager and we have a clerk and for manager we need to store id, name and yearsOfExp.
+For Clerk we need to store id, name and typingSpeed.
+
+    public class Clerk {
+    private int id;
+    private String name;
+    private int typingSpeed;
+    }
+
+    public class Manager {
+    private int id;
+    private String name;
+    privae int yearsOfExp }
+
+ Observation: In both the classes id and name are common.
+-----------------------------------------------------------------------------------------------
+To avoid this we can define a base class and in the base class , we can keep id and name and
+in the child/derived classes we keep the attribute which is specific to the Clerk and Manager.
+So to access the member of the Parent/Base class we can declare the members of the base clas as protected.So public or protected or default ( for default the derived class and the base class
+should be in the same package ) can be accessed or inherited in the sub classes but we 
+cannot inherit the private members in the derived/child/sub-classes. 
+  public class Employee {
+    protected int id;
+    protected String name;  
+   }
+
+  public class Clerk extends Employee {
+   private int typingSpeed;
+  }
+
+  public class Manager extends Employee {
+   private int yearsOfExp;
+ }
+
+
+
+  
